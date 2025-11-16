@@ -1,0 +1,45 @@
+<div class="home-container">
+  <div class="welcome-banner">
+    <div class="welcome-content">
+      <h1>Hello, {{ userName }}!</h1>
+      <p>Welcome to your dashboard. Here's a quick overview of your activity.</p>
+    </div>
+    <div class="user-avatar">
+      {{ userName.charAt(0) }}
+    </div>
+  </div>
+
+  <section class="metrics-section">
+    <h2>Key Metrics</h2>
+    <div class="metric-cards">
+      <div 
+        *ngFor="let card of metricCards" 
+        class="card metric-card" 
+        [ngStyle]="{'border-left-color': card.color}"
+      >
+        <span class="icon" [ngClass]="card.icon"></span>
+        <div class="details">
+          <p class="title">{{ card.title }}</p>
+          <p class="value">{{ card.value }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <hr class="section-divider">
+
+  <section class="quick-links-section">
+    <h2>Quick Access</h2>
+    <div class="link-cards">
+      <a 
+        *ngFor="let link of quickLinks" 
+        [routerLink]="link.path" 
+        class="card link-card"
+      >
+        <h3 class="link-title">{{ link.title }}</h3>
+        <p class="link-description">{{ link.description }}</p>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </section>
+</div>

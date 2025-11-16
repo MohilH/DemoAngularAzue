@@ -1,0 +1,50 @@
+<!-- <nav>
+    <h2>
+Logo
+    </h2>
+    <ul>
+    <li>
+      <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/">Home</a>
+    </li>
+    <li>
+      <a routerLinkActive="active" routerLink="/login">Login</a>
+    </li>
+    <li>
+       <a routerLinkActive="active" routerLink="/about">About</a>
+    </li>
+    <li>
+      <a routerLinkActive="active" routerLink="/contact">Contact</a>
+    </li>
+    <li>
+      <a routerLinkActive="active" routerLink="/registration">Registration</a>
+    </li>
+</ul>
+</nav> -->
+
+<header class="main-header">
+  <div class="header-content">
+    
+    <a routerLink="/" class="logo">
+      <span class="logo-icon">⭐</span>
+      **App Name**
+    </a>
+
+    <nav class="nav-menu" [class.open]="isMenuOpen">
+      <ul>
+        <li *ngFor="let item of navItems">
+          <a [routerLink]="item.path" (click)="isMenuOpen = false">
+            {{ item.name }}
+          </a>
+        </li>
+      </ul>
+      
+      <button class="cta-button mobile-only">Sign Up</button>
+    </nav>
+
+    <button class="menu-toggle" (click)="toggleMenu()">
+      <div class="bar" [class.animate]="isMenuOpen"></div>
+      <div class="bar" [class.animate]="isMenuOpen"></div>
+      <div class="bar" [class.animate]="isMenuOpen"></div>
+    </button>
+  </div>
+</header>

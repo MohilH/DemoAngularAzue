@@ -1,0 +1,49 @@
+<div class="about-container">
+
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>We Build the Future of Digital Experience</h1>
+      <p>
+        Founded in 2020, our mission is to simplify complex digital challenges 
+        through innovative, user-friendly solutions. We are driven by a passion 
+        for technology and a commitment to our clients' success.
+      </p>
+    </div>
+  </section>
+  
+
+  <section class="mission-section">
+    <h2>Our Mission & Values</h2>
+    <div class="mission-content">
+      <div class="value-card">
+        <h3>Visionary Thinking</h3>
+        <p>We look beyond the present, anticipating future technological needs to keep our clients ahead of the curve.</p>
+      </div>
+      <div class="value-card">
+        <h3>Uncompromising Quality</h3>
+        <p>From the first line of code to the final deployment, we adhere to the highest standards of excellence.</p>
+      </div>
+      <div class="value-card">
+        <h3>Client Success</h3>
+        <p>Our greatest measure of success is the tangible growth and efficiency achieved by our partners.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <section class="team-section">
+    <h2>Meet Our Leadership Team</h2>
+    <div class="team-grid">
+      <div *ngFor="let member of teamMembers" class="team-card">
+        <div class="team-image-placeholder">
+          <!-- <span class="initials">{{ member.name.split(' ').map(n => n[0]).join('') }}</span> -->
+        </div>
+        <h3>{{ member.name }}</h3>
+        <h4>{{ member.role }}</h4>
+        <p>{{ member.bio }}</p>
+      </div>
+    </div>
+  </section>
+
+</div>

@@ -1,0 +1,156 @@
+/* src/app/about-us/about-us.component.css */
+
+:host {
+    display: block;
+    background-color: #f4f7f9 ; /* Light background */
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* --- Global Headings and Divider --- */
+h2 {
+    color: #34495e;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: #e9ecef;
+    margin: 60px 0;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background-color: #ffffff;
+    padding: 60px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero-section h1 {
+    color: #007bff;
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.hero-section p {
+    color: #6c757d;
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- Mission & Values Section --- */
+.mission-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.value-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    border-top: 5px solid #007bff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.value-card h3 {
+    color: #34495e;
+    margin-top: 0;
+    font-size: 1.4em;
+}
+
+.value-card p {
+    color: #7f8c8d;
+}
+
+/* --- Team Section --- */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.team-card {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e9ecef;
+}
+
+.team-image-placeholder {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #adb5bd;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.team-image-placeholder .initials {
+    font-size: 3em;
+    color: white;
+    font-weight: 600;
+}
+/* In a real app, use an <img> tag inside the placeholder */
+
+.team-card h3 {
+    color: #34495e;
+    margin-bottom: 5px;
+    font-size: 1.3em;
+}
+
+.team-card h4 {
+    color: #007bff;
+    font-size: 0.9em;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.team-card p {
+    color: #7f8c8d;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5em;
+    }
+    .hero-section p {
+        font-size: 1.1em;
+    }
+    
+    .mission-content, .team-grid {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    }
+    
+    .team-image-placeholder {
+        width: 100px;
+        height: 100px;
+    }
+}

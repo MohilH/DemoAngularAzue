@@ -1,0 +1,221 @@
+/* nav {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+ul{
+        display: flex;
+    list-style-type: none;
+    width: 300px;
+    justify-content: space-between;
+}
+ul li a{
+    text-decoration: none;
+}
+
+.active {
+ background-color: red;
+} */
+
+/* src/app/header/header.component.css */
+
+/* --- Variables --- */
+:host {
+    --primary-color: #007bff;
+    --text-color: #333;
+    --background-color: #ffffff;
+    --border-color: #e0e0e0;
+}
+
+/* --- Main Header Structure --- */
+.main-header {
+    background-color: var(--background-color);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky; /* Keeps header fixed at the top */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+/* --- Logo --- */
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    margin-right: 8px;
+    font-size: 1.2em;
+}
+
+/* --- Navigation Menu (Desktop) --- */
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-menu li {
+    margin-left: 25px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color);
+}
+
+/* Underline effect on hover */
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after { /* Use .active class if you implement active link styling */
+    width: 100%;
+}
+
+/* --- CTA Button (for mobile layout demonstration) --- */
+.cta-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* Hide mobile-only button by default */
+.mobile-only {
+    display: none;
+}
+
+
+/* --- Menu Toggle (Hamburger Icon) --- */
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001; /* Ensure it's above the menu */
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- Responsive Layout (Mobile View) --- */
+@media (max-width: 768px) {
+    
+    /* Show hamburger button */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Hide navigation by default and position it */
+    .nav-menu {
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        left: 0;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        background-color: var(--background-color);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: height 0.3s ease-in-out;
+    }
+
+    /* Open state for the menu */
+    .nav-menu.open {
+        height: auto; /* Auto height to fit content */
+        max-height: 500px; /* Safe limit for transition */
+        padding-bottom: 20px;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    .nav-menu li {
+        margin: 0;
+        width: 100%;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 15px 0;
+        font-size: 1.1rem;
+        width: 100%;
+    }
+
+    .nav-menu a::after {
+        display: none; /* Hide desktop hover effect on mobile */
+    }
+
+    /* Show mobile-only button */
+    .cta-button.mobile-only {
+        display: block;
+        width: calc(100% - 40px);
+        margin: 10px 20px;
+    }
+    
+    /* Hamburger animation (cross) */
+    .bar.animate:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .bar.animate:nth-child(2) {
+        opacity: 0;
+    }
+
+    .bar.animate:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}

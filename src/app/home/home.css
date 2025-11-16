@@ -1,0 +1,188 @@
+/* src/app/home/home.component.css */
+
+:host {
+    display: block;
+    padding: 20px;
+    background-color:#f4f7f9 ; 
+     /* f4f7f9 */
+}
+
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Welcome Banner --- */
+.welcome-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.welcome-content h1 {
+    color: #2c3e50;
+    margin-top: 0;
+    font-size: 2.2em;
+}
+
+.welcome-content p {
+    color: #7f8c8d;
+}
+
+.user-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #3498db;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+/* --- General Section & Divider --- */
+h2 {
+    color: #34495e;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+}
+
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: #ecf0f1;
+    margin: 40px 0;
+}
+
+/* --- Metric Cards Section (CSS Grid) --- */
+.metric-cards {
+    display: grid;
+    /* 4 columns on large screens, automatically wrapping */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.metric-card {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid; /* Placeholder, color is set via [ngStyle] */
+    transition: transform 0.2s;
+}
+
+.metric-card:hover {
+    transform: translateY(-3px);
+}
+
+.metric-card .icon {
+    font-size: 1.8em;
+    margin-right: 15px;
+    /* Placeholder icons—replace with Font Awesome or real SVGs */
+    color: var(--color); /* Will use the border-left-color */
+}
+.metric-card .project::before { content: '🗂️'; }
+.metric-card .task::before { content: '⚠️'; }
+.metric-card .message::before { content: '💬'; }
+.metric-card .disk::before { content: '💾'; }
+
+.metric-card .title {
+    margin: 0;
+    font-size: 0.9em;
+    color: #7f8c8d;
+}
+
+.metric-card .value {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+/* --- Quick Links Section (CSS Grid) --- */
+.link-cards {
+    display: grid;
+    /* 3 columns on large screens */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.link-card {
+    display: block; /* Make the whole card clickable */
+    text-decoration: none;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #ecf0f1;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+}
+
+.link-card:hover {
+    border-color: #3498db;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.link-title {
+    color: #34495e;
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+.link-description {
+    color: #7f8c8d;
+    margin-bottom: 0;
+}
+
+.arrow {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 1.5em;
+    color: #3498db;
+    transition: transform 0.2s;
+}
+
+.link-card:hover .arrow {
+    transform: translateX(5px);
+}
+
+/* --- Responsiveness for smaller screens --- */
+@media (max-width: 600px) {
+    .home-container {
+        padding: 10px;
+    }
+    
+    .welcome-banner {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .user-avatar {
+        margin-bottom: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    /* Stack metrics and links vertically */
+    .metric-cards, .link-cards {
+        grid-template-columns: 1fr;
+    }
+}
