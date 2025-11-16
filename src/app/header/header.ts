@@ -23,7 +23,7 @@ import { NgIf, NgFor } from '@angular/common'; // Needed for *ngIf and *ngFor
   templateUrl: './header.html',
   styleUrl: './header.css',
   standalone: true,
-  imports: [NgIf, NgFor, RouterLink,RouterLinkActive] // Import necessary standalone modules
+  imports: [ NgFor, RouterLink] // Import necessary standalone modules
 })
 export class Header {
   isMenuOpen: boolean = false;
