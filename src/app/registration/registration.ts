@@ -1,9 +1,9 @@
 import { Component , OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators ,ReactiveFormsModule } from '@angular/forms';
-
+import { NgIf } from '@angular/common'; // Needed for *ngIf
 @Component({
   selector: 'app-registration',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,NgIf],
   templateUrl: './registration.html',
   styleUrl: './registration.css',
 })

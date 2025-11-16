@@ -34,7 +34,7 @@ interface QuickLink {
   templateUrl: './home.html',
   styleUrl: './home.css',
   //standalone: true, // Use standalone component structure
-  imports: [NgFor, NgIf, RouterLink , NgStyle , NgClass] 
+  imports: [NgFor, RouterLink , NgStyle , NgClass] 
 })
 export class Home implements OnInit {
   userName: string = 'Alex Johnson';
